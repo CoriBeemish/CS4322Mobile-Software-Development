@@ -15,18 +15,18 @@ import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
-    TextView usernameTextView;
-    TextView passwordTextView;
-    EditText usernameEditText;
-    EditText passwordEditText;
-    Button loginButton;
+    private TextView usernameTextView;
+    private TextView passwordTextView;
+    private EditText usernameEditText;
+    private EditText passwordEditText;
+    private Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //get references to the TextViewLabels
+        //get references to the TextView Labels
         usernameTextView = (TextView) findViewById(R.id.usernameTextView);
         usernameTextView.setText("Username: ");
         passwordTextView = (TextView) findViewById(R.id.passwordTextView);
@@ -34,6 +34,7 @@ public class Login extends AppCompatActivity {
         loginButton = (Button) findViewById(R.id.loginButton);
         loginButton.setText(" Login ");
 
+        //get references to the EditText
         usernameEditText = (EditText) findViewById(R.id.usernameEditText);
         passwordEditText = (EditText) findViewById(R.id.passwordEditText);
 
@@ -44,20 +45,22 @@ public class Login extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // if the username and the password is correct
                 if (usernameEditText.getText().toString().equals("cs4322") && passwordEditText.getText().toString().equals("123456")){
                     Toast.makeText(getApplicationContext(),"Redirecting...",Toast.LENGTH_SHORT).show();
+                    //Redirects the user to the correct username & password page
                     Intent intent = new Intent(getBaseContext(), User.class);
                     intent.putExtra("username",usernameEditText.getText().toString());
                     startActivity(intent);
                 }
-                else {
+                else { 
+                    //if the username and/or password is wrong
                     Toast.makeText(getApplicationContext(), "Wrong Credentials",Toast.LENGTH_SHORT).show();
+                    //Redirects the user to the error page
                     Intent intent = new Intent(getBaseContext(), LoginFail.class);
                     startActivity(intent);
                 }
             }
         });
     } //end method login
-
-
 }
