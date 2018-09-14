@@ -13,14 +13,15 @@ import android.widget.TextView;
 
 public class User extends AppCompatActivity {
 
-    TextView loginMessage;
-    Button backButton;
+    private TextView loginMessage;
+    private Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
+        //get references to the TextView Labels
         loginMessage = (TextView) findViewById(R.id.loginMessage);
         loginMessage.setText(getIntent().getStringExtra("username") + ", welcome to my webpage!" );
 
@@ -30,6 +31,7 @@ public class User extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Sends the user back to the login page
                 Intent intent = new Intent(getBaseContext(), Login.class);
                 startActivity(intent);
             }
