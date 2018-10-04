@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="220dp"
+        android:layout_height="65dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:text="Random Number Service Home" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="40dp"
+        android:layout_toStartOf="@+id/btnStop"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:text="Start Service" />
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/tvStatus"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="-40dp"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:text="Stop Service" />
+
+    <TextView
+        android:id="@+id/charTextView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/btnStop"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:textSize="18sp" />
+
+</RelativeLayout>
