@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_top">10dp</dimen>
+
+
+    <dimen name="label_margin_all">5dp</dimen>
+    <dimen name="label_font_size">18dp</dimen>
+    <dimen name="label_width">85dp</dimen>
+
+</resources>
